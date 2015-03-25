@@ -1,0 +1,60 @@
+﻿drop procedure {databaseOwner}{objectQualifier}GetSurveys
+GO
+
+drop procedure {databaseOwner}{objectQualifier}GetSurvey
+GO
+
+drop procedure {databaseOwner}{objectQualifier}AddSurvey
+GO
+
+drop procedure {databaseOwner}{objectQualifier}UpdateSurvey
+GO
+
+drop procedure {databaseOwner}{objectQualifier}DeleteSurvey
+GO
+
+drop procedure {databaseOwner}{objectQualifier}GetSurveyOptions
+GO
+
+drop procedure {databaseOwner}{objectQualifier}AddSurveyOption
+GO
+
+drop procedure {databaseOwner}{objectQualifier}UpdateSurveyOption
+GO
+
+drop procedure {databaseOwner}{objectQualifier}DeleteSurveyOption
+GO
+
+drop procedure {databaseOwner}{objectQualifier}AddSurveyResult
+GO
+
+drop procedure {databaseOwner}{objectQualifier}AddSurveyResult_cookie
+GO
+ 
+drop procedure {databaseOwner}{objectQualifier}GetSurveyResultData
+GO
+
+drop procedure {databaseOwner}{objectQualifier}DeleteSurveyResultData
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}Surveys
+	DROP CONSTRAINT FK_{objectQualifier}Surveys_{objectQualifier}Modules
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}SurveyOptions
+	DROP CONSTRAINT FK_{objectQualifier}SurveyOptions_{objectQualifier}Surveys
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}SurveyResults
+	DROP CONSTRAINT FK_{objectQualifier}SurveyResults_{objectQualifier}SurveyOptions
+GO
+
+DROP TABLE {databaseOwner}{objectQualifier}SurveyResults
+GO
+
+DROP TABLE {databaseOwner}{objectQualifier}SurveyOptions
+GO
+
+DROP TABLE {databaseOwner}{objectQualifier}Surveys
+GO
+
